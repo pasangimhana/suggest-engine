@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<!-- Add Suggestion Form -->
+<form th:action="@{/add-suggestion}" th:object="${suggestionDto}" method="post">
+    <h3>Suggest me something to learn next.</h3>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required />
+    </div>
+    <p>Here are some technologies I am planning to Learn next.</p>
+    <div>
+        <div th:each="tech : ${technologies}">
+            <input type="checkbox" th:field="*{selectedTechnologies}" th:value="${tech}" /> <span th:text="${tech}"></span>
+        </div>
+    </div>
+    <div>
+        <label for="suggestion">Other:</label>
+        <textarea id="suggestion" th:field="*{suggestion}"></textarea>
+    </div>
+    <div>
+        <button type="submit">Learn these next</button>
+    </div>
+</form>
+
+<!-- Suggestion Added Successfully Message -->
+<div th:if="${successMessage}" class="message">
+    <p th:text="${successMessage}"></p>
+</div>
+</body>
+</html>
