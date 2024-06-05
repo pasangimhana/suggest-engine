@@ -18,7 +18,7 @@ public class SuggestionController {
 
     @Autowired
     private SuggestionService suggestionService;
-    
+
     @GetMapping("/")
     public String showHomePage(Model model) {
         List<String> technologies = Arrays.asList("gRPC", "Go", "Micro Services", "Scala", "K8s", "Rust:Tokio", "Auth Protocols - (OAuth, SAML, SSO, OAuth 2.0");
