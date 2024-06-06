@@ -21,7 +21,20 @@ public class SuggestionController {
 
     @GetMapping("/")
     public String showHomePage(Model model) {
-        List<String> technologies = Arrays.asList("Go + gRPC", "Go + Micro Services", "Scala + Akka", "Docker + nginx", "Rust:Tokio", "Auth Protocols - (OAuth, SAML, SSO, OAuth 2.0)");
+        List<String> technologies = Arrays.asList(
+                "Go + gRPC",
+                "Go + Microservices",
+                "Scala + Akka",
+                "Docker + Nginx",
+                "Rust + Tokio",
+                "Authentication Protocols - (OAuth, SAML, SSO, OAuth 2.0)",
+                "Python + Selenium",
+                "Ansible + Jenkins",
+                "Terraform + AWS",
+                "Kubernetes + Helm",
+                "Chef + Puppet",
+                "GitLab CI/CD + Kubernetes"
+        );
         model.addAttribute("technologies", technologies);
         model.addAttribute("suggestionDto", new SuggestionDto());
         return "index";
