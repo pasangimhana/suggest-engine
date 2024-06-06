@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Home Page</title>
+    <title>Add a Suggestion</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
@@ -25,6 +25,8 @@
     <div>
         <button type="submit">Learn these next</button>
     </div>
+
+    <p>See the suggestions added by others <a th:href="@{/suggestions}">here</a>.</p>
 </form>
 
 <!-- Suggestion Added Successfully Message -->

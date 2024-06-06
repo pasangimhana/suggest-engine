@@ -21,7 +21,7 @@ public class SuggestionController {
 
     @GetMapping("/")
     public String showHomePage(Model model) {
-        List<String> technologies = Arrays.asList("gRPC", "Go", "Micro Services", "Scala", "K8s", "Rust:Tokio", "Auth Protocols - (OAuth, SAML, SSO, OAuth 2.0");
+        List<String> technologies = Arrays.asList("Go + gRPC", "Go + Micro Services", "Scala + Akka", "Docker + nginx", "Rust:Tokio", "Auth Protocols - (OAuth, SAML, SSO, OAuth 2.0)");
         model.addAttribute("technologies", technologies);
         model.addAttribute("suggestionDto", new SuggestionDto());
         return "index";
@@ -47,5 +47,12 @@ public class SuggestionController {
     @GetMapping("/suggestion-success")
     public String showSuggestionSuccessPage() {
         return "suggestion-success";
+    }
+
+    @GetMapping("/suggestions")
+    public String showSuggestions(Model model) {
+        List<Suggestion> suggestions = suggestionService.getSuggestions();
+        model.addAttribute("suggestions", suggestions);
+        return "suggestions";
     }
 }

@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Suggestion</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Suggestions</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
-<h1>Welcome to the Suggestions Page</h1>
+<div class="table-container">
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Suggestions</th>
+    </tr>
+    <tr th:each="suggestion : ${suggestions}">
+        <td th:text="${suggestion.name}"></td>
+        <td>
+            <p th:each="tech : ${suggestion.suggestion}" th:text="${tech}"></p>
+        </td>
+    </tr>
+    </table>
 
-<h2>Suggest yourself.</h2>
+    <button onclick="window.location.href='/'">Add Your Own Suggestions</button>
+</div>
 </body>
 </html>
