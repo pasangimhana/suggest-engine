@@ -25,15 +25,11 @@ public class SuggestionController {
                 "Go + gRPC",
                 "Go + Microservices",
                 "Scala + Akka",
-                "Docker + Nginx",
                 "Rust + Tokio",
                 "Authentication Protocols - (OAuth, SAML, SSO, OAuth 2.0)",
-                "Python + Selenium",
                 "Ansible + Jenkins",
                 "Terraform + AWS",
-                "Kubernetes + Helm",
-                "Chef + Puppet",
-                "GitLab CI/CD + Kubernetes"
+                "Kubernetes + Helm"
         );
         model.addAttribute("technologies", technologies);
         model.addAttribute("suggestionDto", new SuggestionDto());
