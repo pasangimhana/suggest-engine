@@ -23,7 +23,6 @@ public class SuggestionController {
     public String showHomePage(Model model) {
         List<String> technologies = Arrays.asList(
                 "Go + gRPC",
-                "Go + Microservices",
                 "Scala + Akka",
                 "Rust + Tokio",
                 "Authentication Protocols - (OAuth, SAML, SSO, OAuth 2.0)",
